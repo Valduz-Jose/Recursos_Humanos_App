@@ -85,7 +85,7 @@ def create_app():
     CORS(app, resources={r"/api/*": {"origins": "*"}})
 
     # --- REGISTRO DE BLUEPRINTS ---
-    app.register_blueprint(api_bp)
+    # app.register_blueprint(api_bp)
 
     # --- RUTA DE BIENVENIDA / TEST ---
     @app.get("/")
