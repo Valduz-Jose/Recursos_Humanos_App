@@ -7,23 +7,33 @@
         <th>Nombre</th>
         <th>Departamento</th>
         <th>Sueldo</th>
-        <th style="width:140px">Acciones</th>
+        <th style="width: 140px">Acciones</th>
       </tr>
     </thead>
     <tbody>
       @for (empleado of empleados(); track empleado.idEmpleado) {
-      <tr>
-        <td>{{ empleado.idEmpleado }}</td>
-        <td>{{ empleado.nombre }}</td>
-        <td>{{ empleado.departamento }}</td>
-        <td>{{ empleado.sueldo | currency:'':'symbol':'1.2-2' }}</td>
-        <td>
-            <a class="btn btn-sm btn-primary"
-               [routerLink]="['/editar-empleado', empleado.idEmpleado]">
+        <tr>
+          <td>{{ empleado.idEmpleado }}</td>
+          <td>{{ empleado.nombre }}</td>
+          <td>{{ empleado.departamento }}</td>
+          <td>{{ empleado.sueldo | currency: '' : 'symbol' : '1.2-2' }}</td>
+          <td class="d-flex gap-2">
+            <a
+              class="btn btn-sm btn-primary"
+              [routerLink]="['/editar-empleado', empleado.idEmpleado]"
+            >
               Editar
             </a>
+
+            <button
+              class="btn btn-danger btn-sm"
+              (click)="eliminar(empleado.idEmpleado)"
+              [disabled]="eliminandoId() === empleado.idEmpleado"
+            >
+              {{ eliminandoId() === empleado.idEmpleado ? 'Eliminando...' : 'Eliminar' }}
+            </button>
           </td>
-      </tr>
+        </tr>
       }
     </tbody>
   </table>
