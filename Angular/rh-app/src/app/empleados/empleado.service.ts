@@ -8,7 +8,8 @@ import { Empleado } from '../empleado';
 })
 export class EmpleadoService {
   private http = inject(HttpClient);
-  private baseUrl = 'http://localhost:5000/api/empleados';
+  // private baseUrl = 'http://localhost:5000/api/empleados';
+  private baseUrl = 'https://rh-backend-python.onrender.com/api/empleados';
 
   obtenerEmpleados(): Observable<Empleado[]> {
     return this.http.get<Empleado[]>(this.baseUrl);
