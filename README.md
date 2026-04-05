@@ -3,7 +3,7 @@
 Este es un proyecto Full Stack diseñado para la gestión de empleados, permitiendo realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) de forma eficiente.
 
 ## 🚀 Demo en Vivo
-- **Frontend:** recursos-humanos-app-rust.vercel.app
+- **Frontend:** https://recursos-humanos-app-rust.vercel.app/
 - **Backend API:** https://rh-backend-python.onrender.com
 
 ## 🛠️ Tecnologías Utilizadas
