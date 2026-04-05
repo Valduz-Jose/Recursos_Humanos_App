@@ -102,9 +102,9 @@ def create_app():
 
     app.register_blueprint(api_bp)
     
-    @app.get("/")
-    def inicio():
-        return {"mensaje": "API de Recursos Humanos funcionando"}
+    # @app.get("/")
+    # def inicio():
+    #     return {"mensaje": "API de Recursos Humanos funcionando"}
 
     return app
 
