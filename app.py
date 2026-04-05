@@ -96,6 +96,16 @@ def create_app():
             "base_de_datos": "Producción" if "DATABASE_URL" in os.environ else "Local"
         }
 
+    with app.app_context():
+        db.create_all()
+    # -----------------------
+
+    app.register_blueprint(api_bp)
+    
+    @app.get("/")
+    def inicio():
+        return {"mensaje": "API de Recursos Humanos funcionando"}
+
     return app
 
 # Creamos la instancia global para que Gunicorn (Render) la detecte
